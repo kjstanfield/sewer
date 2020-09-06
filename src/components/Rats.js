@@ -18,6 +18,7 @@ const Rats = () => {
           name={rat.name}
           rname={rat.rname}
           server={rat.server}
+          slug={rat.slug}
           character={rat.character}
         />
       ))}
