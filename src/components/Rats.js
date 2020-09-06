@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Rat from "./Rat";
 
 const Rats = () => {
-  const [rats, setRats] = useState([
-    {
-      name: "Loading...",
-      rname: "",
-      server: "",
-      character: "",
-    },
-  ]);
+  const [rats, setRats] = useState([]);
+
+  useEffect(() => {
+    fetch("https://kjstanfield.github.io/audaxloot.github.io/rats.json")
+      .then((res) => res.json())
+      .then((data) => setRats(data.rats));
+  }, []);
 
   return (
     <div className="rat-list">

@@ -15,19 +15,6 @@ import Rats from "./Rats";
 //     console.log(data)
 //   });
 
-fetch("https://kjstanfield.github.io/audaxloot.github.io/rats.json")
-  .then((res) => {
-    if (res.ok) {
-      console.log("Get Rats: SUCCESS");
-      return res;
-    } else {
-      console.log("Get Rats: FAILED");
-      return res;
-    }
-  })
-  .then((res) => res.json())
-  .then((data) => console.log(data));
-
 function App() {
   return (
     <div className="App">
