@@ -1,9 +1,10 @@
 import React from "react";
+import logo from "../images/logo.png";
 
 const Nav = () => {
   return (
     <div className="nav">
-      <h1>The Sewer</h1>
+      <img src={logo} alt="The Sewer"></img>
     </div>
   );
 };
