@@ -1,40 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Rat from "./Rat";
 
-const Rats = () => {
-  const [rats, setRats] = useState([]);
-
-  // const BlizzAPI = require("blizzapi");
-  // const api = new BlizzAPI({
-  //   region: "us",
-  //   clientId: process.env.REACT_APP_BLIZZARD_CLIENT_ID,
-  //   clientSecret: process.env.REACT_APP_BLIZZARD_CLIENT_SECRET,
-  // });
-
-  // api
-  // .query(`/profile/wow/character/${serv}/${char}?namespace=profile-us`)
-  // .then((data) => {
-  //   console.log(`Ran for: ${char}`);
-  //   console.log(data);
-  // });
-
-  useEffect(() => {
-    fetch("https://kjstanfield.github.io/audaxloot.github.io/rats.json")
-      .then((res) => res.json())
-      .then((data) => setRats(data.rats));
-  }, []);
-
+const Rats = ({ characters }) => {
   return (
     <div className="rat-list">
-      {rats.map((rat) => (
-        <Rat
-          key={rat.name}
-          name={rat.name}
-          server={rat.server}
-          slug={rat.slug}
-          character={rat.character}
-        />
-      ))}
+      {characters.length === 0 ? (
+        <h1>No Characters Found</h1>
+      ) : (
+        characters.map((character) => (
+          <Rat
+            key={character.name}
+            rname={character.name}
+            level={character.level}
+            charClass={character.character_class.name.en_US}
+            ilevel={character.average_item_level}
+            server={character.realm.name.en_US}
+          />
+        ))
+      )}
     </div>
   );
 };
