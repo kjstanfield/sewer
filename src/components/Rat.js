@@ -38,7 +38,7 @@ function Rat({
       <div className="rat-server">{server}</div>
       <div className="rat-character">{character}</div>
       <div className={`rat-gender ${gender}`}>
-        {rname === "Bighamspankr" ? (
+        {rname === "Brian" ? (
           <span>
             <FontAwesomeIcon icon={faWheelchair} />
           </span>
