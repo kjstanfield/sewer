@@ -1,13 +1,13 @@
 import React from "react";
 import Nav from "./Nav";
-import Rats from "./Rats";
+import RequestCharacters from "./requestCharacters";
 
 function App() {
   return (
     <div className="App">
       <Nav />
       <div className="main flex">
-        <Rats />
+        <RequestCharacters />
       </div>
     </div>
   );
