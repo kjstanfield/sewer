@@ -20,6 +20,13 @@ const RatList = [
     slug: "area-52",
     character: "bighamspankr",
   },
+  {
+    name: "Pizzasupper",
+    rname: "Todd",
+    server: "Area 52",
+    slug: "area-52",
+    character: "miseryclub",
+  },
 ];
 
 export default RatList;
