@@ -26,20 +26,12 @@ const RequestCharacters = () => {
     }
   }
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    requestAll(RatList);
+  }, []);
 
   return (
     <div className="results">
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          requestAll(RatList);
-          //request(RatList[0].character, RatList[0].slug);
-        }}
-      >
-        <button>Request Characters</button>
-      </form>
-      ;
       <Rats characters={characters} />
     </div>
   );
