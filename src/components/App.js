@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
-import RequestCharacters from "./requestCharacters";
+import RequestCharacters from "./RequestCharacters";
 
 function App() {
   return (
