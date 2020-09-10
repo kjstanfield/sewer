@@ -1,14 +1,18 @@
 import React from "react";
 import Rat from "./Rat";
 
-const Rats = ({ characters }) => {
-  console.log(characters);
+const Rats = ({ characters, ratings }) => {
+  // console.log("Chars :", characters);
+  // console.log("Ratings: ", ratings);
+  let testArray = characters.concat(ratings);
+  console.log(testArray);
+
   return (
     <div className="rat-list">
       {characters.length === 0 ? (
         <h1>No Characters Found</h1>
       ) : (
-        characters.map((character) => (
+        characters.map((character, ratings) => (
           <Rat
             key={character.name}
             name={character.name}
@@ -21,6 +25,7 @@ const Rats = ({ characters }) => {
             race={character.race.name.en_US}
             level={character.level}
             ilevel={character.average_item_level}
+            twosRating={ratings.rating}
           />
         ))
       )}

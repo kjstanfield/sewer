@@ -21,6 +21,7 @@ function Rat({
   race,
   level,
   ilevel,
+  twosRating,
 }) {
   return (
     <div className="rat-container" key={character}>
@@ -61,6 +62,7 @@ function Rat({
       <div className="rat-race">{race}</div>
       <div className="rat-level">Level: {level}</div>
       <div className="rat-ilevel">Average Item Level: {ilevel}</div>
+      <div>{twosRating} Placeholder</div>
       <div className="api-container"></div>
 
       {/* <a

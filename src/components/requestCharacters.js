@@ -4,6 +4,8 @@ import Rats from "./Rats";
 
 const RequestCharacters = () => {
   const [characters, setCharacters] = useState([]);
+  const [ratings, setRatings] = useState([]);
+  //const [charData, setCharData] = useState([]);
 
   const BlizzAPI = require("blizzapi");
   const api = new BlizzAPI({
@@ -12,18 +14,17 @@ const RequestCharacters = () => {
     clientSecret: process.env.REACT_APP_BLIZZARD_CLIENT_SECRET,
   });
 
-  // async function requestArenaBracket(realmSlug, characterName, pvpBracket) {
-  //   const result = await api.query(
-  //     `/profile/wow/character/${realmSlug}/${characterName}/pvp-bracket/${pvpBracket}?namespace=profile-us`
-  //   );
-  //   return result;
-  // }
+  async function requestArenaBracket(realmSlug, characterName, pvpBracket) {
+    const result = await api.query(
+      `/profile/wow/character/${realmSlug}/${characterName}/pvp-bracket/${pvpBracket}?namespace=profile-us`
+    );
+    setRatings((ratings) => [...ratings, result] || []);
+  }
 
   async function requestProfile(realmSlug, characterName, rname) {
     const result = await api.query(
       `/profile/wow/character/${realmSlug}/${characterName}?namespace=profile-us`
     );
-
     result["rname"] = rname;
     setCharacters((characters) => [...characters, result] || []);
   }
@@ -36,6 +37,11 @@ const RequestCharacters = () => {
         characterList[i].character,
         characterList[i].rname
       );
+      requestArenaBracket(
+        characterList[i].slug,
+        characterList[i].character,
+        "2v2"
+      );
     }
   }
 
@@ -45,7 +51,7 @@ const RequestCharacters = () => {
 
   return (
     <div className="results">
-      <Rats characters={characters} />
+      <Rats characters={characters} ratings={ratings} />
     </div>
   );
 };
