@@ -5,6 +5,7 @@ import Rats from "./Rats";
 const RequestCharacters = () => {
   const [characters, setCharacters] = useState([]);
   const [ratings, setRatings] = useState([]);
+  const [images, setImages] = useState([]);
   //const [charData, setCharData] = useState([]);
 
   const BlizzAPI = require("blizzapi");
@@ -13,6 +14,13 @@ const RequestCharacters = () => {
     clientId: process.env.REACT_APP_BLIZZARD_CLIENT_ID,
     clientSecret: process.env.REACT_APP_BLIZZARD_CLIENT_SECRET,
   });
+
+  async function requestImages(realmSlug, characterName) {
+    const result = await api.query(
+      `/profile/wow/character/${realmSlug}/${characterName}/character-media?namespace=profile-us`
+    );
+    setImages((images) => [...images, result] || []);
+  }
 
   async function requestArenaBracket(realmSlug, characterName, pvpBracket) {
     const result = await api.query(
@@ -42,6 +50,7 @@ const RequestCharacters = () => {
         characterList[i].character,
         "2v2"
       );
+      requestImages(characterList[i].slug, characterList[i].character);
     }
   }
 
@@ -51,7 +60,7 @@ const RequestCharacters = () => {
 
   return (
     <div className="results">
-      <Rats characters={characters} ratings={ratings} />
+      <Rats characters={characters} ratings={ratings} images={images} />
     </div>
   );
 };

@@ -22,6 +22,7 @@ function Rat({
   level,
   ilevel,
   twosRating,
+  images,
 }) {
   return (
     <div className="rat-container" key={character}>
@@ -59,6 +60,7 @@ function Rat({
         )}`}
         alt={charClass}
       />
+
       <div className="rat-race">{race}</div>
       <div className="rat-level">Level: {level}</div>
       <div className="rat-ilevel">Average Item Level: {ilevel}</div>
