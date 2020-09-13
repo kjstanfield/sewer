@@ -21,8 +21,10 @@ function Rat({
   race,
   level,
   ilevel,
-  arena2,
-  images,
+  pvp,
+  avatar_url,
+  bust_url,
+  render_url,
   name,
 }) {
   return (
@@ -33,6 +35,9 @@ function Rat({
         >
           {character}
         </a>
+      </div>
+      <div className="rat-avatar">
+        <img src={avatar_url} alt="character avatar"></img>
       </div>
       <div className="rat-server">{server}</div>
       <div className="rat-character">{name}</div>
@@ -62,11 +67,20 @@ function Rat({
       <div className="rat-race">{race}</div>
       <div className="rat-level">Level: {level}</div>
       <div className="rat-ilevel">Average Item Level: {ilevel}</div>
-      {arena2 === null ? (
+
+      {pvp === null ? (
         <div>2v2: 0</div>
       ) : (
         <div className="rat-twos">
-          2v2: <span className="twos-rating">{arena2.rating}</span>
+          2v2: <span className="twos-rating">{pvp.a2.rating}</span>
+        </div>
+      )}
+
+      {pvp === null ? (
+        <div>3v3: 0</div>
+      ) : (
+        <div className="rat-threes">
+          3v3: <span className="threes-rating">{pvp.a3.rating}</span>
         </div>
       )}
       <div className="api-container"></div>

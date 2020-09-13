@@ -18,7 +18,7 @@ const RequestCharacters = () => {
     try {
       const profile = await api.getProfile(slug, characterName, rname);
       const images = await api.getImages(slug, characterName);
-      const arena = await api.getArenaBracket(slug, characterName, "2v2");
+      const arena = await api.getArenaBracket(slug, characterName);
       // This merges all data returned from the API into the root level of character.
       // NOTE: Data WILL get overwritten if they share the same key so the merge order does matter.
       // For exmaple if images and profile both have 'name' at the root, profile will overwrite it

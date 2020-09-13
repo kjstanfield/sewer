@@ -18,7 +18,10 @@ const Rats = ({ characters }) => {
             average_item_level,
             character_class,
             displayName,
-            pvpTwos,
+            pvp,
+            avatar_url,
+            bust_url,
+            render_url,
           } = character;
 
           return (
@@ -34,8 +37,10 @@ const Rats = ({ characters }) => {
               race={race.name.en_US}
               level={level}
               ilevel={average_item_level}
-              arena2={pvpTwos}
-              // images={images[i]}
+              pvp={pvp}
+              avatar_url={avatar_url}
+              bust_url={bust_url}
+              render_url={render_url}
             />
           );
         })

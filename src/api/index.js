@@ -7,7 +7,7 @@ class APIService {
       clientId: process.env.REACT_APP_BLIZZARD_CLIENT_ID,
       clientSecret: process.env.REACT_APP_BLIZZARD_CLIENT_SECRET,
     });
-    this.arenaBrackets = ["2v2", "3v3"];
+    //this.arenaBrackets = ["2v2", "3v3"];
   }
 
   async getImages(realmSlug, characterName) {
@@ -16,16 +16,20 @@ class APIService {
     );
   }
 
-  async getArenaBracket(realmSlug, characterName, pvpBracket) {
+  async getArenaBracket(realmSlug, characterName) {
     try {
-      const result = await this.blizzApi.query(
-        `/profile/wow/character/${realmSlug}/${characterName}/pvp-bracket/${pvpBracket}?namespace=profile-us`
+      const a2 = await this.blizzApi.query(
+        `/profile/wow/character/${realmSlug}/${characterName}/pvp-bracket/2v2?namespace=profile-us`
       );
-      return { pvpTwos: result };
+      const a3 = await this.blizzApi.query(
+        `/profile/wow/character/${realmSlug}/${characterName}/pvp-bracket/3v3?namespace=profile-us`
+      );
+      const result = { a2, a3 };
+      return { pvp: result };
     } catch (error) {
       // Catching errors here since this API call returns a 404 anytime a character doesn't have arena data.
       // This will prevent Promise.all from erroring out when it really shouldn't
-      return { pvpTwos: null };
+      return { pvp: null };
     }
   }
 
