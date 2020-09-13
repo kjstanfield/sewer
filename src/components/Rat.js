@@ -23,6 +23,7 @@ function Rat({
   ilevel,
   twosRating,
   images,
+  name,
 }) {
   return (
     <div className="rat-container" key={character}>
@@ -37,7 +38,7 @@ function Rat({
         </a>
       </div>
       <div className="rat-server">{server}</div>
-      <div className="rat-character">{character}</div>
+      <div className="rat-character">{name}</div>
       <div className={`rat-gender ${gender}`}>
         {rname === "Brian" ? (
           <span>

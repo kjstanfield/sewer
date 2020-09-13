@@ -23,6 +23,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -71,4 +72,34 @@ body {
 
 .rat-emoji {
   float: right;
+}
+
+.error-container {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+}
+.error-container code {
+  color: red;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  flex: 1 0 500px;
+}
+.rotate {
+  animation: rotation 2s infinite linear;
+  width: 300px;
+  height: 300px;
+  align-self: center;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
