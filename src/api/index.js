@@ -21,11 +21,11 @@ class APIService {
       const result = await this.blizzApi.query(
         `/profile/wow/character/${realmSlug}/${characterName}/pvp-bracket/${pvpBracket}?namespace=profile-us`
       );
-      return { [pvpBracket]: result };
+      return { pvpTwos: result };
     } catch (error) {
       // Catching errors here since this API call returns a 404 anytime a character doesn't have arena data.
       // This will prevent Promise.all from erroring out when it really shouldn't
-      return { [pvpBracket]: null };
+      return { pvpTwos: null };
     }
   }
 

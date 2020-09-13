@@ -21,16 +21,13 @@ function Rat({
   race,
   level,
   ilevel,
-  twosRating,
+  arena2,
   images,
   name,
 }) {
   return (
     <div className="rat-container" key={character}>
       <div className={`rat-name ${cleanString(charClass)}`}>
-        <span className="rat-emoji" role="img" aria-label="rat emoji">
-          🐀
-        </span>
         <a
           href={`https://worldofwarcraft.com/en-us/character/us/${slug}/${character.toLowerCase()}`}
         >
@@ -65,7 +62,13 @@ function Rat({
       <div className="rat-race">{race}</div>
       <div className="rat-level">Level: {level}</div>
       <div className="rat-ilevel">Average Item Level: {ilevel}</div>
-      <div>{twosRating} Placeholder</div>
+      {arena2 === null ? (
+        <div>2v2: 0</div>
+      ) : (
+        <div className="rat-twos">
+          2v2: <span className="twos-rating">{arena2.rating}</span>
+        </div>
+      )}
       <div className="api-container"></div>
 
       {/* <a

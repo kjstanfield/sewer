@@ -48,6 +48,7 @@ const RequestCharacters = () => {
     getCharacterProfiles()
       .then((charactersData) => {
         setCharacters(charactersData);
+        console.log("Data:", charactersData);
         setIsLoading(false);
       })
       .catch((error) => {
