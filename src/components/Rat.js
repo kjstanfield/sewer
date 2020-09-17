@@ -66,7 +66,7 @@ function Rat({
 
       <div className="rat-race">{race}</div>
       <div className="rat-level">Level: {level}</div>
-      <div className="rat-ilevel">Test Average Item Level: {ilevel}</div>
+      <div className="rat-ilevel">Average Item Level: {ilevel}</div>
 
       {pvp === null ? (
         <div>2v2: 0</div>
