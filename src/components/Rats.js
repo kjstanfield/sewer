@@ -22,6 +22,7 @@ const Rats = ({ characters }) => {
             avatar_url,
             bust_url,
             render_url,
+            last_login_timestamp,
           } = character;
 
           return (
@@ -41,6 +42,7 @@ const Rats = ({ characters }) => {
               avatar_url={avatar_url}
               bust_url={bust_url}
               render_url={render_url}
+              last_login={last_login_timestamp}
             />
           );
         })

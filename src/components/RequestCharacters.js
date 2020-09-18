@@ -77,11 +77,7 @@ const RequestCharacters = () => {
     );
   }
 
-  return (
-    <div className="results">
-      <Rats characters={characters} />
-    </div>
-  );
+  return <Rats characters={characters} />;
 };
 
 export default RequestCharacters;
