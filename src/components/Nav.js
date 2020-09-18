@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "../images/logo.png";
+import SewerLogo from "../images/logo.png";
 
 const Nav = () => {
   return (
     <div className="nav">
-      <img src={logo} alt="The Sewer"></img>
+      <img src={SewerLogo} alt="The Sewer"></img>
     </div>
   );
 };
