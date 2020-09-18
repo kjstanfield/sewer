@@ -5,17 +5,15 @@ import {
   faVenus,
   faWheelchair,
 } from "@fortawesome/free-solid-svg-icons";
+import LastLogin from "./Login";
+import ArenaStats from "./ArenaStats";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
+import { Popover } from "react-bootstrap";
 
 function cleanString(string, optionalSuffix) {
   optionalSuffix = optionalSuffix || "";
   return string.replace(/\s/g, "").toLowerCase() + optionalSuffix;
-}
-
-function findDate(date) {
-  const d = new Date(date);
-  return d.toDateString(date) + " " + d.toLocaleTimeString(date);
 }
 
 function Rat({
@@ -73,25 +71,10 @@ function Rat({
         <Accordion.Collapse eventKey="0">
           <Card.Body>
             <div className="rat-ilevel">Average Item Level: {ilevel}</div>
-            <div className="rat-arena2">
-              {pvp === null ? (
-                <div>2v2: 0</div>
-              ) : (
-                <div className="rat-twos">
-                  2v2: <span className="twos-rating">{pvp.a2.rating}</span>
-                </div>
-              )}
-            </div>
-            <div className="rat-arena3">
-              {pvp === null ? (
-                <div>3v3: 0</div>
-              ) : (
-                <div className="rat-threes">
-                  3v3: <span className="threes-rating">{pvp.a3.rating}</span>
-                </div>
-              )}
-            </div>
-            <div className="login">Last Login: {findDate(last_login)}</div>
+            <ArenaStats bracket="2v2" rating={0} />
+            {console.log(character, pvp)}
+            <ArenaStats bracket="3v3" rating={0} />
+            <LastLogin milliseconds={last_login} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
