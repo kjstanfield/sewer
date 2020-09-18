@@ -5,11 +5,11 @@ import {
   faVenus,
   faWheelchair,
 } from "@fortawesome/free-solid-svg-icons";
-import LastLogin from "./Login";
+import Login from "./Login";
 import ArenaStats from "./ArenaStats";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
-import { Popover } from "react-bootstrap";
+import Table from "react-bootstrap/Table";
 
 function cleanString(string, optionalSuffix) {
   optionalSuffix = optionalSuffix || "";
@@ -70,11 +70,31 @@ function Rat({
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="0">
           <Card.Body>
-            <div className="rat-ilevel">Average Item Level: {ilevel}</div>
-            <ArenaStats bracket="2v2" rating={0} />
-            {console.log(character, pvp)}
-            <ArenaStats bracket="3v3" rating={0} />
-            <LastLogin milliseconds={last_login} />
+            <Table bordered hover size="sm">
+              <thead>
+                <tr>
+                  <th colSpan="2">Average Item Level:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan="2">{ilevel}</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th colSpan="2">2v2</th>
+                </tr>
+              </thead>
+              <ArenaStats bracket="2v2" data={pvp ? pvp.a2 : 0} />
+              <thead>
+                <tr>
+                  <th colSpan="2">3v3</th>
+                </tr>
+              </thead>
+              <ArenaStats bracket="3v3" data={pvp ? pvp.a3 : 0} />
+            </Table>
+            <Login milliseconds={last_login} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>

@@ -1,10 +1,14 @@
 import React from "react";
 
-function LastLogin({ milliseconds }) {
+function Login({ milliseconds }) {
   const d = new Date(milliseconds);
   const result =
     d.toDateString(milliseconds) + " " + d.toLocaleTimeString(milliseconds);
-  return <div className="login">Last Login: {result}</div>;
+  return (
+    <div className="login">
+      <div>Last Login: {result}</div>
+    </div>
+  );
 }
 
-export default LastLogin;
+export default Login;
