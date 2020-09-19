@@ -29,7 +29,7 @@ body {
 
 .rat-list {
   margin: 2em auto;
-  width: 75%;
+  width: 70%;
 }
 
 .card,
@@ -42,7 +42,7 @@ body {
 .card-body {
   background-color: rgba(255, 255, 255, 1);
   border-radius: 12px;
-  width: 93%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -51,12 +51,17 @@ body {
   border: 2px solid black;
   cursor: pointer;
   border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 45%;
 }
 
 .avatar {
   filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
   border: 1px solid black;
   margin: 0.7em;
+  width: 92px;
+  height: 92px;
 }
 
 .rat-inner {
@@ -76,6 +81,11 @@ body {
 
 .rat-class {
   font-weight: bold;
+}
+
+.info-wrapper {
+  margin: 0 auto;
+  width: 95%;
 }
 
 .collapse-tab {
@@ -101,55 +111,73 @@ thead {
   border: 2px solid black;
 }
 
+.tableResult {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2em;
+}
+
 /* ==============================
    Class Colors
    ============================== */
 .deathknight {
   background-color: #c41f3b;
+  background-image: url("images/classes/dk.png");
 }
 
 .demonhunter {
   background-color: #a330c9;
+  background-image: url("images/classes/dh.png");
 }
 
 .druid {
   background-color: #ff7d0a;
+  background-image: url("images/classes/druid.png");
 }
 
 .hunter {
   background-color: #a9d271;
+  background-image: url("images/classes/hunter.png");
 }
 
 .mage {
   background-color: #40c7eb;
+  background-image: url("images/classes/mage.png");
 }
 
 .monk {
   background-color: #00ff96;
+  background-image: url("images/classes/monk.png");
 }
 
 .paladin {
   background-color: #f58cba;
+  background-image: url("images/classes/paladin.png");
 }
 
 .priest {
   background-color: #ffffff;
+  background-image: url("images/classes/priest.png");
 }
 
 .rogue {
   background-color: #fff569;
+  background-image: url("images/classes/rogue.png");
 }
 
 .shaman {
   background-color: #0070de;
+  background-image: url("images/classes/shaman.png");
 }
 
 .warlock {
   background-color: #8787ed;
+  background-image: url("images/classes/warlock.png");
 }
 
 .warrior {
   background-color: #c79c6e;
+  background-image: url("images/classes/warrior.png");
 }
 
 /* ==============================

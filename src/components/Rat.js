@@ -70,31 +70,35 @@ function Rat({
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="0">
           <Card.Body>
-            <Table bordered hover size="sm">
-              <thead>
-                <tr>
-                  <th colSpan="2">Average Item Level:</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colSpan="2">{ilevel}</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th colSpan="2">2v2</th>
-                </tr>
-              </thead>
-              <ArenaStats bracket="2v2" data={pvp ? pvp.a2 : 0} />
-              <thead>
-                <tr>
-                  <th colSpan="2">3v3</th>
-                </tr>
-              </thead>
-              <ArenaStats bracket="3v3" data={pvp ? pvp.a3 : 0} />
-            </Table>
-            <Login milliseconds={last_login} />
+            <div className="info-wrapper">
+              <Table bordered hover size="sm">
+                <thead>
+                  <tr>
+                    <th colSpan="2">Average Item Level:</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colSpan="2" className="tableResult">
+                      {ilevel}
+                    </td>
+                  </tr>
+                </tbody>
+                <thead>
+                  <tr>
+                    <th colSpan="2">2v2</th>
+                  </tr>
+                </thead>
+                <ArenaStats data={pvp ? pvp.a2 : 0} />
+                <thead>
+                  <tr>
+                    <th colSpan="2">3v3</th>
+                  </tr>
+                </thead>
+                <ArenaStats data={pvp ? pvp.a3 : 0} />
+              </Table>
+              <Login milliseconds={last_login} />
+            </div>
           </Card.Body>
         </Accordion.Collapse>
       </Card>
