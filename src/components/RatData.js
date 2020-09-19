@@ -4,7 +4,7 @@ const RatList = [
     rname: "Kyle",
     server: "Tichondrius",
     slug: "tichondrius",
-    characterName: "magnetic",
+    characterName: "pseudocode",
   },
   {
     displayName: "Pizzasupper",
