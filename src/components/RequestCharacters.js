@@ -56,7 +56,6 @@ const RequestCharacters = () => {
         }
 
         setCharacters(charactersData);
-        console.log("Data:", charactersData);
         setIsLoading(false);
       })
       .catch((error) => {
