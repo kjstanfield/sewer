@@ -47,6 +47,14 @@ const RequestCharacters = () => {
   useEffect(() => {
     getCharacterProfiles()
       .then((charactersData) => {
+        // Randomize the character order
+        for (let i = charactersData.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * i);
+          const temp = charactersData[i];
+          charactersData[i] = charactersData[j];
+          charactersData[j] = temp;
+        }
+
         setCharacters(charactersData);
         console.log("Data:", charactersData);
         setIsLoading(false);

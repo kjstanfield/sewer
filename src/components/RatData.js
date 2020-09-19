@@ -55,6 +55,13 @@ const RatList = [
     slug: "mugthol",
     characterName: "fluentx",
   },
+  {
+    displayName: "Fizzle",
+    rname: "Josh",
+    server: "Kil'jaeden",
+    slug: "kiljaeden",
+    characterName: "stendár",
+  },
 ];
 
 export default RatList;

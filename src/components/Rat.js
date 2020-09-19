@@ -10,6 +10,7 @@ import ArenaStats from "./ArenaStats";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
 
 function cleanString(string, optionalSuffix) {
   optionalSuffix = optionalSuffix || "";
@@ -96,6 +97,22 @@ function Rat({
                   </tr>
                 </thead>
                 <ArenaStats data={pvp ? pvp.a3 : 0} />
+                <thead>
+                  <tr>
+                    <th className="armory" colSpan="2">
+                      <Button
+                        size="lg"
+                        variant="secondary"
+                        href={`https://worldofwarcraft.com/en-us/character/us/${slug}/${cleanString(
+                          character
+                        )}`}
+                        target="_blank"
+                      >
+                        {character}'s Armory
+                      </Button>
+                    </th>
+                  </tr>
+                </thead>
               </Table>
               <Login milliseconds={last_login} />
             </div>
