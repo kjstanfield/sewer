@@ -75,12 +75,12 @@ const RequestCharacters = () => {
 
   if (error) {
     return (
-      <>
-        <div className="error-container">
+      <div className="error-container">
+        <div className="error-text">
           <code>Error! {error}</code>
         </div>
-        <img src={DED_RAT} alt="error" />
-      </>
+        <img className="ded-rat" src={DED_RAT} alt="error" />
+      </div>
     );
   }
 
