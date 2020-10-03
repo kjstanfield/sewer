@@ -11,6 +11,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
+import ExpBar from "./ExpBar";
 
 function cleanString(string, optionalSuffix) {
   optionalSuffix = optionalSuffix || "";
@@ -33,6 +34,7 @@ function Rat({
   render_url,
   name,
   last_login,
+  experience,
 }) {
   return (
     <Accordion>
@@ -49,6 +51,7 @@ function Rat({
               <div className="server">{server}</div>
               <div>
                 Level: <span className="level">{level}</span>
+                <ExpBar level={level} experience={experience}></ExpBar>
               </div>
               <div className="tag">
                 {rname === "Brian" ? (

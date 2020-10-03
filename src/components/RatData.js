@@ -11,7 +11,7 @@ const RatList = [
     rname: "Todd",
     server: "Area 52",
     slug: "area-52",
-    characterName: "detresse",
+    characterName: "miseryclub",
   },
   {
     displayName: "Brain",

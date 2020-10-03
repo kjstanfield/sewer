@@ -80,6 +80,19 @@ body {
   font-weight: bold;
 }
 
+.progress {
+  background: rgba(0, 0, 0, 0.2);
+  width: 10em;
+}
+
+.bg-exp {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(81, 0, 83, 1) 100%
+  );
+}
+
 .rat-class {
   font-weight: bold;
 }

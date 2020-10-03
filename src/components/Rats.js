@@ -23,8 +23,9 @@ const Rats = ({ characters }) => {
             bust_url,
             render_url,
             last_login_timestamp,
+            experience,
           } = character;
-
+          console.log(character);
           return (
             <Rat
               key={name}
@@ -43,6 +44,7 @@ const Rats = ({ characters }) => {
               bust_url={bust_url}
               render_url={render_url}
               last_login={last_login_timestamp}
+              experience={experience}
             />
           );
         })
