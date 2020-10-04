@@ -62,6 +62,27 @@ const RatList = [
     slug: "kiljaeden",
     characterName: "stendár",
   },
+  {
+    displayName: "Pizzasupper",
+    rname: "Todd",
+    server: "Area 52",
+    slug: "area-52",
+    characterName: "moshpit",
+  },
+  {
+    displayName: "Pizzasupper",
+    rname: "Todd",
+    server: "Area 52",
+    slug: "area-52",
+    characterName: "plopdumps",
+  },
+  {
+    displayName: "Pizzasupper",
+    rname: "Todd",
+    server: "Area 52",
+    slug: "area-52",
+    characterName: "channelling",
+  },
 ];
 
 export default RatList;

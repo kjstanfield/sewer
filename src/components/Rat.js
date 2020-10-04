@@ -49,7 +49,7 @@ function Rat({
             <div className="rat-inner">
               <div className="name">{character}</div>
               <div className="server">{server}</div>
-              <div>
+              <div className="level-container">
                 Level: <span className="level">{level}</span>
                 <ExpBar level={level} experience={experience}></ExpBar>
               </div>

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -67,6 +71,7 @@ body {
 
 .rat-inner {
   margin: 0.7em 0.3em;
+  width: 80%;
 }
 
 .name {
@@ -81,11 +86,41 @@ body {
 }
 
 .progress {
+  position: relative;
   background: rgba(0, 0, 0, 0.2);
-  width: 10em;
+}
+
+.exp-container {
+  position: relative;
+  max-width: 844px;
+  height: 100%;
+}
+
+.exp-overlay {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+.exp-text {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black,
+    -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black,
+    0.05em 0.05em black;
 }
 
 .bg-exp {
+  border-radius: 5px;
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 1) 0%,
